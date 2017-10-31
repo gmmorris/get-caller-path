@@ -1,6 +1,6 @@
 const stack  = require('callsite')
 
-module.exports = function (){
+module.exports = function getCallerFile (){
   const [,,callerCallSite] = stack()
   if(callerCallSite) {
     return callerCallSite.getFileName()

@@ -1,17 +1,18 @@
-const resolvePath = require('resolve')
+const path = require('path')
 
-const getCallerPath = require('../index')
 const callGetCallerFilenameFromFixtures = require('./fixtures/callerOf_getCallerFilename')
+
+const getCallerFilepath = require('../index')
 
 test('should return the path of the file which calls it', function() {
   expect(
-    getCallerPath()
+    getCallerFilepath()
   ).toMatch(
     /node_modules\/jest/
   )
 })
 
-test('should return the path of the file which calls it', function() {
+test('should return the full path of the file which calls it', function() {
   expect(
     callGetCallerFilenameFromFixtures()
   ).toBe(
